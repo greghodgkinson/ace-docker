@@ -30,7 +30,9 @@ pipeline {
         
         stage('Run BAR') {
             steps {
-             	sh "cd 11.0.0.0/ace/ubuntu-1604/demo;  docker run -d --name transformation_map -e LICENSE=accept -P transformation_map:1.0"           
+            	sh "docker stop transformation_map"  
+            	sh "docker rm transformation_map"  
+             	sh "docker run -d --name transformation_map -e LICENSE=accept -P transformation_map:1.0"           
             }
         }
              
