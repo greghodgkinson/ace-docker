@@ -18,7 +18,7 @@ pipeline {
         
         stage('Build Base') {
             steps {
-             	sh "cd ace/ubuntu-1604/base; docker build -t ace:11.0.0.0 ."           
+             	sh "cd 11.0.0.0/ace/ubuntu-1604/base; docker build -t ace:11.0.0.0 ."           
             }
         }
         
