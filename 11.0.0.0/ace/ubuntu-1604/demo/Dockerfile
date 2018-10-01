@@ -10,7 +10,8 @@ FROM ace:11.0.0.0
 ENV BAR1=Transformation_Map.bar
 
 # Copy in the bar file to a temporary directory
-COPY --chown=aceuser $BAR1 /tmp
+COPY $BAR1 /tmp
+RUN sudo chown -R aceuser /tmp
 
 # Unzip the BAR file; need to use bash to make the profile work
 RUN bash -c 'mqsibar -w /home/aceuser/ace-server -a /tmp/$BAR1 -c'
