@@ -22,5 +22,11 @@ pipeline {
             }
         }
         
+        stage('Build Bar + Base') {
+            steps {
+             	sh "cd 11.0.0.0/ace/ubuntu-1604/demo; docker build -t transformation_map:1.0 ."           
+            }
+        }
+        
     }
 }
